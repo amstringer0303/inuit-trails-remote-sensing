@@ -1,4 +1,4 @@
-# Inuit trails — remote sensing experiments
+# some weekend trail experiments
 
 Exploratory code for linking **satellite observations** to **possible indicators** of extreme-weather stress on **subsistence travel corridors** (sea ice, coastal/marine, and inland). This repository is a methods sandbox, not a finished assessment product.
 
