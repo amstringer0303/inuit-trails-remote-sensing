@@ -1,0 +1,48 @@
+{
+  "description": "Approximate analysis regions tied to publicly documented travel corridors or municipal trail networks. These are bounding areas for remote-sensing workflows, not surveyed trail centrelines.",
+  "disclaimer": "Exact subsistence routes are often sensitive or unmapped. Do not treat these polygons as authoritative trail geometry. Prefer official community or government layers when available and permitted.",
+  "corridors": [
+    {
+      "id": "ith_highway_segment",
+      "geojson": "data/published_corridors/ith_highway_segment_approx.geojson",
+      "summary": "All-season public highway (Inuvik–Tuktoyaktuk). AOI is a ~tens-of-km bounding patch along the documented corridor midpoint—not the official road centreline.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Inuvik%E2%80%93Tuktoyaktuk_Highway",
+        "https://open.canada.ca/data/en/dataset/44f8e510-3b4d-4452-90c2-09838553ccf8",
+        "https://www.inuvwb.ca/register/gnwt-dot-inuvik-to-tuktoyaktuk-highway-ith-0"
+      ]
+    },
+    {
+      "id": "akshayuk_pass_vicinity",
+      "geojson": "data/published_corridors/akshayuk_pass_vicinity.geojson",
+      "summary": "Publicly described mountaineering / park travel corridor (Akshayuk Pass, Auyuittuq National Park). AOI is a coarse box around published pass coordinates.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Akshayuk_Pass",
+        "https://www.pc.gc.ca/pn-np/nu/auyuittuq/visit/cartes-maps"
+      ]
+    },
+    {
+      "id": "iqaluit_snowmobile_vicinity",
+      "geojson": "data/published_corridors/iqaluit_snowmobile_network_vicinity.geojson",
+      "summary": "Hamlet-scale box covering terrain where the City of Iqaluit publishes a snowmobile trail map. This polygon is NOT traced from that map—download the municipal map for official routes.",
+      "sources": [
+        "https://www.iqaluit.ca/in/content/snowmobile-trail-map"
+      ]
+    },
+    {
+      "id": "kugluktuk_coronation_gulf",
+      "geojson": "data/aoi/kugluktuk_coronation_gulf.geojson",
+      "summary": "Coastal travel / hunting access region near Kugluktuk (see feature properties in GeoJSON).",
+      "sources": [
+        "https://planetarycomputer.microsoft.com/"
+      ]
+    }
+  ],
+  "default_s2_windows": {
+    "pre_start": "2023-06-01",
+    "pre_end": "2023-06-15",
+    "post_start": "2023-07-01",
+    "post_end": "2023-07-22",
+    "note": "Summer 2023 windows with daylight; adjust per research question and cloud cover."
+  }
+}

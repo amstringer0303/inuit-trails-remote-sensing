@@ -45,6 +45,28 @@ python scripts/run_event_catalog.py --event iqaluit_july_2022_heat
 
 Entries explicitly flag when **Sentinel-2 is inappropriate** (e.g. December storm) vs when a **summer** window is reasonable.
 
+## Published travel corridors (web-sourced AOIs)
+
+`data/published_corridors/` contains **approximate analysis polygons** tied to **public** descriptions (highway corridor, park pass, municipal trail-map context—not digitized trail lines):
+
+| File | What it bounds |
+|------|----------------|
+| `ith_highway_segment_approx.geojson` | Mid-section of the **Inuvik–Tuktoyaktuk Highway** (public road; official GIS on Open Canada / GNWT). |
+| `akshayuk_pass_vicinity.geojson` | **Akshayuk Pass** area, Auyuittuq NP (published coordinates / park maps). |
+| `iqaluit_snowmobile_network_vicinity.geojson` | Wider **Iqaluit** context where the city publishes a [snowmobile trail map](https://www.iqaluit.ca/in/content/snowmobile-trail-map)—polygon is **not** traced from that map. |
+| `aoi_collection.geojson` | All of the above **plus** Kugluktuk/Coronation Gulf in one layer for QGIS. |
+| `corridor_metadata.json` | IDs, paths, and **source URLs** for your methods section. |
+
+Batch Sentinel-2 ΔNDVI / ΔNDWI (summer 2023 windows in metadata) into `outputs/published_corridors/<id>/` (local only):
+
+```bash
+python scripts/run_published_corridor_batch.py --dry-run
+python scripts/run_published_corridor_batch.py
+python scripts/run_published_corridor_batch.py --only ith_highway_segment,akshayuk_pass_vicinity
+```
+
+`s2_change_detection.py` accepts `--out-dir` for other one-off AOIs.
+
 ## What this repo tries to do
 
 1. **Search** cloud-friendly Sentinel-2 (and optionally Sentinel-1) scenes via STAC.

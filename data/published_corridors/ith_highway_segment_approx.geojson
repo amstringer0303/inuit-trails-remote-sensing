@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "ith_highway_segment_approx",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "ith_highway_segment",
+        "name": "Inuvik–Tuktoyaktuk Highway (mid-corridor patch, approximate)",
+        "sources": "Wikipedia route description; GNWT / Open Canada orthomosaic metadata for official geometry",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Inuvik%E2%80%93Tuktoyaktuk_Highway",
+          "https://open.canada.ca/data/en/dataset/44f8e510-3b4d-4452-90c2-09838553ccf8"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-133.58, 68.73],
+          [-133.10, 68.73],
+          [-133.10, 68.96],
+          [-133.58, 68.96],
+          [-133.58, 68.73]
+        ]]
+      }
+    }
+  ]
+}

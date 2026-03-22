@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "akshayuk_pass_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "akshayuk_pass_vicinity",
+        "name": "Akshayuk Pass vicinity (approximate analysis box)",
+        "sources": "Published coordinates and descriptions of Akshayuk Pass, Auyuittuq National Park",
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Akshayuk_Pass",
+          "https://www.pc.gc.ca/pn-np/nu/auyuittuq/visit/cartes-maps"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-65.42, 66.52],
+          [-64.88, 66.52],
+          [-64.88, 66.82],
+          [-65.42, 66.82],
+          [-65.42, 66.52]
+        ]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "name": "iqaluit_snowmobile_network_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "iqaluit_snowmobile_vicinity",
+        "name": "Iqaluit area — municipal snowmobile map vicinity (NOT traced routes)",
+        "sources": "City of Iqaluit publishes a snowmobile trail map; this polygon only bounds the wider hamlet/tundra context for summer RS indices.",
+        "source_urls": [
+          "https://www.iqaluit.ca/in/content/snowmobile-trail-map"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-68.78, 63.64],
+          [-68.32, 63.64],
+          [-68.32, 63.86],
+          [-68.78, 63.86],
+          [-68.78, 63.64]
+        ]]
+      }
+    }
+  ]
+}

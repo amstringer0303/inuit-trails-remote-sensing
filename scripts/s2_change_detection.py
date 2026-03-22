@@ -29,12 +29,18 @@ from src.stac_s2 import (
 )
 
 DEFAULT_AOI = ROOT / "data" / "aoi" / "example_nunavut_bbox.geojson"
-OUT_DIR = ROOT / "outputs"
+DEFAULT_OUT = ROOT / "outputs"
 
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="S2 NDVI/NDWI change between two periods")
     p.add_argument("--aoi", type=Path, default=DEFAULT_AOI, help="GeoJSON AOI path")
+    p.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Directory for GeoTIFFs and PNG (default: outputs/)",
+    )
     p.add_argument("--pre-start", default="2023-06-01", help="Pre window start (ISO date)")
     p.add_argument("--pre-end", default="2023-06-15", help="Pre window end")
     p.add_argument("--post-start", default="2023-07-01", help="Post window start")
@@ -45,6 +51,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    out_dir = Path(args.out_dir).resolve() if args.out_dir else DEFAULT_OUT
     bbox = aoi_bbox_from_geojson(str(args.aoi))
     print(f"AOI bbox (lon/lat): {bbox}")
 
@@ -76,7 +83,7 @@ def main() -> None:
         print("Dry run: skipping raster IO.")
         return
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     r0, n0, g0 = load_s2_band_pair(pre_item, bbox)
     r1, n1, g1 = load_s2_band_pair(post_item, bbox)
@@ -91,8 +98,8 @@ def main() -> None:
     nw1m = nw1.rio.reproject_match(nw0)
     d_ndwi = nw1m - nw0
 
-    d_ndvi.rio.to_raster(OUT_DIR / "delta_ndvi.tif", driver="GTiff")
-    d_ndwi.rio.to_raster(OUT_DIR / "delta_ndwi.tif", driver="GTiff")
+    d_ndvi.rio.to_raster(out_dir / "delta_ndvi.tif", driver="GTiff")
+    d_ndwi.rio.to_raster(out_dir / "delta_ndwi.tif", driver="GTiff")
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 4))
     for ax, da, title in zip(
@@ -110,9 +117,11 @@ def main() -> None:
         plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
     plt.tight_layout()
-    fig.savefig(OUT_DIR / "delta_indices.png", dpi=150)
+    fig.savefig(out_dir / "delta_indices.png", dpi=150)
     plt.close(fig)
-    print(f"Wrote {OUT_DIR / 'delta_ndvi.tif'}, {OUT_DIR / 'delta_ndwi.tif'}, {OUT_DIR / 'delta_indices.png'}")
+    print(
+        f"Wrote {out_dir / 'delta_ndvi.tif'}, {out_dir / 'delta_ndwi.tif'}, {out_dir / 'delta_indices.png'}"
+    )
 
 
 if __name__ == "__main__":

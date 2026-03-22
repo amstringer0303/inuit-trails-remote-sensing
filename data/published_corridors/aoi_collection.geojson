@@ -1,0 +1,74 @@
+{
+  "type": "FeatureCollection",
+  "name": "published_travel_corridor_aois",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "ith_highway_segment",
+        "name": "Inuvik–Tuktoyaktuk Highway (mid-corridor patch, approximate)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-133.58, 68.73],
+          [-133.10, 68.73],
+          [-133.10, 68.96],
+          [-133.58, 68.96],
+          [-133.58, 68.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "akshayuk_pass_vicinity",
+        "name": "Akshayuk Pass vicinity (approximate analysis box)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-65.42, 66.52],
+          [-64.88, 66.52],
+          [-64.88, 66.82],
+          [-65.42, 66.82],
+          [-65.42, 66.52]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "iqaluit_snowmobile_vicinity",
+        "name": "Iqaluit snowmobile map vicinity (not traced routes)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-68.78, 63.64],
+          [-68.32, 63.64],
+          [-68.32, 63.86],
+          [-68.78, 63.86],
+          [-68.78, 63.64]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "kugluktuk_coronation_gulf",
+        "name": "Kugluktuk vicinity, Coronation Gulf travel region"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-115.55, 67.72],
+          [-114.85, 67.72],
+          [-114.85, 67.92],
+          [-115.55, 67.92],
+          [-115.55, 67.72]
+        ]]
+      }
+    }
+  ]
+}
