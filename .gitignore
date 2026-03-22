@@ -1,0 +1,29 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Large / local data
+data/trails/*.gpkg
+data/trails/*.geojson
+!data/trails/.gitkeep
+
+outputs/*.tif
+outputs/*.png
+!outputs/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Secrets
+.env
+*.pem

@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "name": "example_aoi_near_iqaluit",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "note": "Replace with your study area; small box for testing downloads." },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-68.65, 63.68],
+          [-68.35, 63.68],
+          [-68.35, 63.82],
+          [-68.65, 63.82],
+          [-68.65, 63.68]
+        ]]
+      }
+    }
+  ]
+}
