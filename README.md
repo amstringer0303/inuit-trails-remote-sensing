@@ -20,6 +20,31 @@ Outputs (local only; not committed): `outputs/case_study_kugluktuk_spring2023/` 
 
 *Interpretation:* Warmer-than-baseline spring conditions and negative ΔNDSI (snow loss) are **physically plausible** in 2023, but this is **not** proof of impacts on specific hunting trails without local evidence and appropriate data governance.
 
+## Past events → climate + remote sensing
+
+**What is possible**
+
+- **Research:** Use news, community reports, and literature to pin down **what happened**, **where**, and **when**.
+- **Climate context:** Pull gridded daily series (e.g. Open-Meteo / ERA5) at a point or small region and compare to a baseline window.
+- **Remote sensing:** For **sunlit**, **cloud-free** periods, compare Sentinel-2 scenes before/after to get **proxies** (snow/NDSI, wetness/NDWI, vegetation/NDVI) over a **hunting or travel region** (buffered AOI)—not individual trail lines.
+
+**What is not possible (with this stack)**
+
+- **Seeing trails** in multispectral imagery; **proving** impacts on subsistence without local knowledge.
+- **Optical** analysis during **polar night** or **persistent cloud** (many winter storms): use **reanalysis/SAR**/microwave instead (Sentinel-1 not wired here yet).
+
+**Catalog**
+
+`data/events/event_catalog.json` lists example events with references. List them and run a scripted assessment:
+
+```bash
+python scripts/run_event_catalog.py --list
+python scripts/run_event_catalog.py --event iqaluit_july_2022_heat --dry-run
+python scripts/run_event_catalog.py --event iqaluit_july_2022_heat
+```
+
+Entries explicitly flag when **Sentinel-2 is inappropriate** (e.g. December storm) vs when a **summer** window is reasonable.
+
 ## What this repo tries to do
 
 1. **Search** cloud-friendly Sentinel-2 (and optionally Sentinel-1) scenes via STAC.

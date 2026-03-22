@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "name": "iqaluit_frobisher_inland_access",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "place": "Iqaluit area, Frobisher Bay / Meta Incognita Peninsula fringe",
+        "context": "Inland tundra and lake terrain used for travel and harvesting; July 2022 was an exceptionally warm month across Nunavut (see event catalog citations). Optical RS can capture snow/vegetation/water surface changes in summer."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-68.75, 63.62],
+          [-68.35, 63.62],
+          [-68.35, 63.88],
+          [-68.75, 63.88],
+          [-68.75, 63.62]
+        ]]
+      }
+    }
+  ]
+}

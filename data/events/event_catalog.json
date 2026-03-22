@@ -1,0 +1,67 @@
+{
+  "notes": [
+    "Satellites do not map culturally defined trails. Use AOIs as hunting/travel *regions* and indices as *proxies* (snow, wetness, vegetation).",
+    "Sentinel-2 optical data need daylight and clear sky. Winter storms (blizzards) require SAR (e.g. Sentinel-1) or reanalysis, not S2.",
+    "Each entry includes public references for your write-up; verify details before citing in formal work."
+  ],
+  "events": [
+    {
+      "id": "kugluktuk_spring_2023",
+      "title": "Warm May–June 2023 vs 1991–2020 baseline, Kugluktuk / Coronation Gulf",
+      "climate_point": { "lat": 67.826, "lon": -115.143 },
+      "aoi_geojson": "data/aoi/kugluktuk_coronation_gulf.geojson",
+      "sentinel2": { "recommended": true, "reason": "Spring daylight; snow–melt contrast on land and nearshore." },
+      "run_command": "python scripts/case_study_kugluktuk_spring2023.py",
+      "references": [
+        "https://open-meteo.com/en/docs/historical-weather-api",
+        "https://planetarycomputer.microsoft.com/"
+      ]
+    },
+    {
+      "id": "iqaluit_july_2022_heat",
+      "title": "Exceptionally warm July 2022, Nunavut (Iqaluit-area surface conditions — verify climate at this grid point)",
+      "climate_point": { "lat": 63.7467, "lon": -68.517 },
+      "aoi_geojson": "data/aoi/iqaluit_frobisher_vicinity.geojson",
+      "sentinel2": {
+        "recommended": true,
+        "pre_start": "2022-07-01",
+        "pre_end": "2022-07-12",
+        "post_start": "2022-07-18",
+        "post_end": "2022-07-31",
+        "reason": "Mid-summer daylight; compare early vs late July green-up / snow patch loss after record-warm month."
+      },
+      "references": [
+        "https://nunatsiaq.com/stories/article/july-brings-big-heat-to-nunavuts-high-arctic/",
+        "https://nunatsiaq.com/stories/article/nunavuts-eureka-weather-station-experiences-warmest-july-on-record/"
+      ]
+    },
+    {
+      "id": "pangnirtung_dec_2023_storm_impacts",
+      "title": "Severe weather / infrastructure stress, Pangnirtung area, December 2023",
+      "climate_point": { "lat": 66.1454, "lon": -65.7124 },
+      "aoi_geojson": null,
+      "sentinel2": {
+        "recommended": false,
+        "reason": "December polar night at this latitude: no useful Sentinel-2 surface reflectance. Use ERA5/reanalysis wind & precip, ground reports, and/or Sentinel-1 SAR if you implement it."
+      },
+      "references": [
+        "https://www.cbc.ca/news/canada/north/pangnirtung-state-of-emergency-power-outages-1.7047586",
+        "https://www.rcinet.ca/eye-on-the-arctic/2023/12/04/residents-of-pangnirtung-nunavut-get-electricity-back-after-days-long-power-outage/"
+      ]
+    },
+    {
+      "id": "jan_2022_record_arctic_cyclone",
+      "title": "Record Arctic cyclone, January 2022 (sea-ice pack, not community trails)",
+      "climate_point": null,
+      "aoi_geojson": null,
+      "sentinel2": {
+        "recommended": false,
+        "reason": "Peak impacts were over the ice pack (e.g. Barents/Kara sector) under winter darkness; science papers use microwave sea ice, waves, and reanalysis. Not a drop-in S2 trail case study."
+      },
+      "references": [
+        "https://doi.org/10.1029/2022JD037161",
+        "https://phys.org/news/2022-11-strongest-arctic-cyclone-loss-sea.html"
+      ]
+    }
+  ]
+}
