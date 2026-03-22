@@ -16,7 +16,7 @@ python scripts/case_study_kugluktuk_spring2023.py
 python scripts/case_study_kugluktuk_spring2023.py --dry-run   # climate + STAC metadata only
 ```
 
-Outputs: `outputs/case_study_kugluktuk_spring2023/` (`climate_summary.json`, `climate_may_june_kugluktuk.png`, `delta_*.tif`, `rs_change_panel.png`, `REPORT.md`).
+Outputs (local only; not committed): `outputs/case_study_kugluktuk_spring2023/` — `climate_summary.json`, `climate_may_june_kugluktuk.png`, `delta_*.tif`, `rs_change_panel.png`, `REPORT.md`.
 
 *Interpretation:* Warmer-than-baseline spring conditions and negative ΔNDSI (snow loss) are **physically plausible** in 2023, but this is **not** proof of impacts on specific hunting trails without local evidence and appropriate data governance.
 

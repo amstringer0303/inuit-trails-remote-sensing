@@ -11,8 +11,8 @@ data/trails/*.gpkg
 data/trails/*.geojson
 !data/trails/.gitkeep
 
-outputs/*.tif
-outputs/*.png
+# Generated maps and figures (regenerate with scripts)
+outputs/**
 !outputs/.gitkeep
 
 # IDE
