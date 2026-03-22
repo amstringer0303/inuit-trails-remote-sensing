@@ -45,6 +45,23 @@ python scripts/run_event_catalog.py --event iqaluit_july_2022_heat
 
 Entries explicitly flag when **Sentinel-2 is inappropriate** (e.g. December storm) vs when a **summer** window is reasonable.
 
+## What `outputs/` means (read this before interpreting maps)
+
+For each AOI and date pair, the scripts pick **two Sentinel-2** scenes (a “pre” window and a “post” window), clip to your polygon, and compute pixel-wise differences:
+
+| File | Meaning |
+|------|--------|
+| **`delta_ndvi.tif`** | Change in **NDVI** (vegetation greenness proxy): **post minus pre**. Positive often means more green vegetation in post scene; negative can mean browning, shadow differences, or sensor/registration noise. |
+| **`delta_ndwi.tif`** | Change in **NDWI** (wetness / open water sensitivity, McFeeters): **post minus pre**. More positive can indicate more wetness or water signal; interpretation depends on land cover (tundra, ice, shallow ponds). |
+| **`delta_indices.png`** | Quick RGB-style plot of those two deltas side by side. |
+
+**What this does *not* tell you:** It does **not** measure trail damage, hunting success, or travel safety. Two images differ for many reasons (cloud edges, BRDF, snow vs bare ground, phenology, misalignment). The **polygon** is only a **region of interest**, not a route. Use outputs as **hypothesis generators** alongside climate data, community knowledge, and field context.
+
+**Folder layout:**
+
+- `outputs/published_corridors/<corridor_id>/` — default **early June → mid‑August 2023** comparison from `run_published_corridor_batch.py` (see `corridor_metadata.json` windows; widened for cloudy Baffin coast).
+- `outputs/extreme_events/<event_id>/<corridor_id>/` — comparisons using the date windows in `extreme_event_profiles.json` (e.g. July 2022 heat, spring 2023 melt).
+
 ## Published travel corridors (web-sourced AOIs)
 
 `data/published_corridors/` contains **approximate analysis polygons** tied to **public** descriptions (highway corridor, park pass, municipal trail-map context—not digitized trail lines):
@@ -56,6 +73,7 @@ Entries explicitly flag when **Sentinel-2 is inappropriate** (e.g. December stor
 | `iqaluit_snowmobile_network_vicinity.geojson` | Wider **Iqaluit** context where the city publishes a [snowmobile trail map](https://www.iqaluit.ca/in/content/snowmobile-trail-map)—polygon is **not** traced from that map. |
 | `aoi_collection.geojson` | All of the above **plus** Kugluktuk/Coronation Gulf in one layer for QGIS. |
 | `corridor_metadata.json` | IDs, paths, and **source URLs** for your methods section. |
+| `extreme_event_profiles.json` | Public **extreme periods** (storms, heat, melt) linked to AOI ids; notes when **Sentinel-2 is inappropriate** (e.g. November blizzard). |
 
 Batch Sentinel-2 ΔNDVI / ΔNDWI (summer 2023 windows in metadata) into `outputs/published_corridors/<id>/` (local only):
 
@@ -66,6 +84,16 @@ python scripts/run_published_corridor_batch.py --only ith_highway_segment,akshay
 ```
 
 `s2_change_detection.py` accepts `--out-dir` for other one-off AOIs.
+
+**Extreme-event windows (optional):** runs S2 for AOIs listed on an event when optical analysis is appropriate:
+
+```bash
+python scripts/run_extreme_event_s2.py --event nunavut_july_2022_territory_heat --dry-run
+python scripts/run_extreme_event_s2.py --event spring_2023_kitikmeot_warm_melt
+python scripts/run_extreme_event_s2.py --event kivalliq_blizzard_nov_2023
+```
+
+The last command prints why **S2 is not recommended** for that winter storm.
 
 ## What this repo tries to do
 

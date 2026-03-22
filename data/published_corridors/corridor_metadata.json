@@ -36,13 +36,53 @@
       "sources": [
         "https://planetarycomputer.microsoft.com/"
       ]
+    },
+    {
+      "id": "cambridge_bay_travel_region",
+      "geojson": "data/published_corridors/cambridge_bay_travel_region.geojson",
+      "summary": "Kitikmeot hub on Victoria Island south coast; regional snow/ice/travel context (public location sources).",
+      "sources": [
+        "https://www.nunavut.ca/cambridge-bay"
+      ]
+    },
+    {
+      "id": "rankin_inlet_coastal_vicinity",
+      "geojson": "data/published_corridors/rankin_inlet_coastal_vicinity.geojson",
+      "summary": "Kivalliq Hudson Bay coast near Rankin Inlet; pair with Nov 2023 storm reporting (optical RS limited that season).",
+      "sources": [
+        "https://www.cbc.ca/news/canada/north/blizzard-rankin-inlet-kivalliq-region-nunavut-1.7036264"
+      ]
+    },
+    {
+      "id": "arviat_coastal_vicinity",
+      "geojson": "data/published_corridors/arviat_coastal_vicinity.geojson",
+      "summary": "West Hudson Bay coast near Arviat; same storm period as Rankin in public reports.",
+      "sources": [
+        "https://www.cbc.ca/news/canada/north/arviat-state-of-emergency-power-outage-blizzard-1.7040198"
+      ]
+    },
+    {
+      "id": "pangnirtung_fjord_vicinity",
+      "geojson": "data/published_corridors/pangnirtung_fjord_vicinity.geojson",
+      "summary": "Pangnirtung fjord / Auyuittuq access context; summer optical contrasts.",
+      "sources": [
+        "https://www.pc.gc.ca/pn-np/nu/auyuittuq"
+      ]
+    },
+    {
+      "id": "sanikiluaq_belcher_vicinity",
+      "geojson": "data/published_corridors/sanikiluaq_belcher_vicinity.geojson",
+      "summary": "Belcher Islands / Sanikiluaq sea-ice travel context (public ELOKA sea-ice project references).",
+      "sources": [
+        "https://eloka-arctic.org/communities/sanikiluaq/seaice_project.html"
+      ]
     }
   ],
   "default_s2_windows": {
     "pre_start": "2023-06-01",
-    "pre_end": "2023-06-15",
+    "pre_end": "2023-06-20",
     "post_start": "2023-07-01",
-    "post_end": "2023-07-22",
+    "post_end": "2023-08-15",
     "note": "Summer 2023 windows with daylight; adjust per research question and cloud cover."
   }
 }

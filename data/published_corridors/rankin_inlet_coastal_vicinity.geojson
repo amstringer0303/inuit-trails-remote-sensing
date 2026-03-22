@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "rankin_inlet_coastal_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "rankin_inlet_coastal_vicinity",
+        "name": "Rankin Inlet — Hudson Bay coastal travel / sea-ice access context",
+        "sources": "Community coordinates; November 2023 Kivalliq blizzard widely reported (wind, infrastructure)—see extreme_event_profiles.json.",
+        "source_urls": [
+          "https://www.cbc.ca/news/canada/north/blizzard-rankin-inlet-kivalliq-region-nunavut-1.7036264",
+          "https://geohack.toolforge.org/geohack.php?pagename=Rankin_Inlet&params=62_49_N_92_05_W_type:city_scale:20000_region:CA-NU"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-92.35, 62.68],
+          [-91.78, 62.68],
+          [-91.78, 62.98],
+          [-92.35, 62.98],
+          [-92.35, 62.68]
+        ]]
+      }
+    }
+  ]
+}

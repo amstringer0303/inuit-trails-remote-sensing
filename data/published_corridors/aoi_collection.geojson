@@ -4,70 +4,74 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {
-        "corridor_id": "ith_highway_segment",
-        "name": "Inuvik–Tuktoyaktuk Highway (mid-corridor patch, approximate)"
-      },
+      "properties": { "corridor_id": "ith_highway_segment", "name": "Inuvik–Tuktoyaktuk Highway (approx patch)" },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [-133.58, 68.73],
-          [-133.10, 68.73],
-          [-133.10, 68.96],
-          [-133.58, 68.96],
-          [-133.58, 68.73]
-        ]]
+        "coordinates": [[[-133.58, 68.73], [-133.1, 68.73], [-133.1, 68.96], [-133.58, 68.96], [-133.58, 68.73]]]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "corridor_id": "akshayuk_pass_vicinity",
-        "name": "Akshayuk Pass vicinity (approximate analysis box)"
-      },
+      "properties": { "corridor_id": "akshayuk_pass_vicinity", "name": "Akshayuk Pass vicinity" },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [-65.42, 66.52],
-          [-64.88, 66.52],
-          [-64.88, 66.82],
-          [-65.42, 66.82],
-          [-65.42, 66.52]
-        ]]
+        "coordinates": [[[-65.42, 66.52], [-64.88, 66.52], [-64.88, 66.82], [-65.42, 66.82], [-65.42, 66.52]]]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "corridor_id": "iqaluit_snowmobile_vicinity",
-        "name": "Iqaluit snowmobile map vicinity (not traced routes)"
-      },
+      "properties": { "corridor_id": "iqaluit_snowmobile_vicinity", "name": "Iqaluit snowmobile map vicinity" },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [-68.78, 63.64],
-          [-68.32, 63.64],
-          [-68.32, 63.86],
-          [-68.78, 63.86],
-          [-68.78, 63.64]
-        ]]
+        "coordinates": [[[-68.78, 63.64], [-68.32, 63.64], [-68.32, 63.86], [-68.78, 63.86], [-68.78, 63.64]]]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "corridor_id": "kugluktuk_coronation_gulf",
-        "name": "Kugluktuk vicinity, Coronation Gulf travel region"
-      },
+      "properties": { "corridor_id": "kugluktuk_coronation_gulf", "name": "Kugluktuk / Coronation Gulf" },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [-115.55, 67.72],
-          [-114.85, 67.72],
-          [-114.85, 67.92],
-          [-115.55, 67.92],
-          [-115.55, 67.72]
-        ]]
+        "coordinates": [[[-115.55, 67.72], [-114.85, 67.72], [-114.85, 67.92], [-115.55, 67.92], [-115.55, 67.72]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "corridor_id": "cambridge_bay_travel_region", "name": "Cambridge Bay travel region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-105.48, 68.98], [-104.72, 68.98], [-104.72, 69.3], [-105.48, 69.3], [-105.48, 68.98]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "corridor_id": "rankin_inlet_coastal_vicinity", "name": "Rankin Inlet coastal vicinity" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-92.35, 62.68], [-91.78, 62.68], [-91.78, 62.98], [-92.35, 62.98], [-92.35, 62.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "corridor_id": "arviat_coastal_vicinity", "name": "Arviat coastal vicinity" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-94.25, 60.98], [-93.82, 60.98], [-93.82, 61.22], [-94.25, 61.22], [-94.25, 60.98]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "corridor_id": "pangnirtung_fjord_vicinity", "name": "Pangnirtung fjord vicinity" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.05, 66.02], [-65.42, 66.02], [-65.42, 66.28], [-66.05, 66.28], [-66.05, 66.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "corridor_id": "sanikiluaq_belcher_vicinity", "name": "Sanikiluaq / Belcher Islands" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-79.55, 56.32], [-78.88, 56.32], [-78.88, 56.74], [-79.55, 56.74], [-79.55, 56.32]]]
       }
     }
   ]

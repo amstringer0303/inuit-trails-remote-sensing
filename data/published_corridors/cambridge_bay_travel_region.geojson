@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "cambridge_bay_travel_region",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "cambridge_bay_travel_region",
+        "name": "Cambridge Bay (Ikaluktutiak) — coastal / inland travel context",
+        "sources": "Public hamlet location and regional planning pages (Kitikmeot hub, Victoria Island south coast).",
+        "source_urls": [
+          "https://www.nunavut.ca/cambridge-bay",
+          "https://geohack.toolforge.org/geohack.php?pagename=List_of_communities_in_Nunavut&params=69_07_02_N_105_03_11_W_type:city_scale:20000_region:CA-NU&title=Cambridge+Bay"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-105.48, 68.98],
+          [-104.72, 68.98],
+          [-104.72, 69.30],
+          [-105.48, 69.30],
+          [-105.48, 68.98]
+        ]]
+      }
+    }
+  ]
+}

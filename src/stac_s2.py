@@ -47,7 +47,7 @@ def search_s2_items(
         bbox=list(bbox),
         datetime=f"{start}/{end}",
         max_items=max_items,
-        query={"eo:cloud_cover": {"lt": 60}},
+        query={"eo:cloud_cover": {"lt": 85}},
     )
     return list(search.items())
 
