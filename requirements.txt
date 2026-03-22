@@ -12,3 +12,6 @@ planetary-computer>=1.0.0
 
 # Plotting
 matplotlib>=3.7
+
+# Climate API (ERA5 family reanalysis via Open-Meteo archive)
+pandas>=2.0

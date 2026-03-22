@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Iterable
 
 import geopandas as gpd
+import numpy as np
 import planetary_computer
 import pystac_client
 import rioxarray  # noqa: F401 — registers .rio accessor
@@ -87,3 +88,28 @@ def load_s2_band_pair(
     nir = _open_band(item, nir_band, bbox_4326)
     green = _open_band(item, green_band, bbox_4326)
     return red, nir, green
+
+
+def load_s2_bands(
+    item: Item,
+    bbox_4326: tuple[float, float, float, float],
+    band_names: list[str],
+) -> dict[str, xr.DataArray]:
+    return {name: _open_band(item, name, bbox_4326) for name in band_names}
+
+
+# SCL classes to treat as cloud / shadow / bad for masking (Sentinel-2 L2A scene classification)
+SCL_MASK_VALUES = frozenset({1, 3, 8, 9, 10})
+
+
+def scl_is_clear(scl: xr.DataArray) -> xr.DataArray:
+    """True where pixel is not saturated, cloud, shadow, or cirrus (coarse clear mask)."""
+    v = np.asarray(scl.values, dtype=np.int16)
+    bad = np.isin(v, list(SCL_MASK_VALUES))
+    clear = ~bad
+    return xr.DataArray(
+        clear,
+        coords=scl.coords,
+        dims=scl.dims,
+        name="scl_clear",
+    )

@@ -14,6 +14,15 @@ def ndvi(nir: xr.DataArray, red: xr.DataArray) -> xr.DataArray:
     return out.assign_attrs(long_name="NDVI", grid_mapping=nir.attrs.get("grid_mapping"))
 
 
+def ndsi(green: xr.DataArray, swir11: xr.DataArray) -> xr.DataArray:
+    """Normalized difference snow index (Green = B03, SWIR = B11 for Sentinel-2)."""
+    g = green.astype("float32")
+    s = swir11.astype("float32")
+    den = g + s
+    out = xr.where(den != 0, (g - s) / den, np.nan)
+    return out.assign_attrs(long_name="NDSI", grid_mapping=green.attrs.get("grid_mapping"))
+
+
 def ndwi_mcfeeters(green: xr.DataArray, nir: xr.DataArray) -> xr.DataArray:
     """NDWI (McFeeters): water / wetness sensitivity using green and NIR."""
     g = green.astype("float32")
