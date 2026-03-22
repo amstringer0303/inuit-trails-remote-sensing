@@ -1,0 +1,16 @@
+{
+  "climate_point_lat": 67.826,
+  "climate_point_lon": -115.143,
+  "baseline_period_years": [
+    1991,
+    2020
+  ],
+  "baseline_n_years": 30,
+  "baseline_mean_may_june_t_c": 1.5781967213114754,
+  "baseline_std_may_june_t_c": 1.3453521172053855,
+  "year_2023_mean_may_june_t_c": 5.444262295081968,
+  "year_2023_total_precip_mm_may_june": 51.9,
+  "year_2023_thaw_days_tmax_gt0_may_june": 58,
+  "z_score_2023_mean_t_vs_baseline": 2.873645883726875,
+  "percentile_warmer_than_baseline_years": 100.0
+}

@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "name": "kugluktuk_coronation_gulf_travel_corridor",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "place": "Kugluktuk vicinity, Coronation Gulf",
+        "context": "Coastal tundra and landfast/nearshore ice zone used for seasonal travel and hunting access; spring melt timing affects overland and shore-fast ice routes.",
+        "reference_period_note": "Spring 2023 saw widespread anomalous warmth across parts of the Canadian Arctic relative to recent decades (public summaries from national climate services). This AOI is for methods testing only."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-115.55, 67.72],
+          [-114.85, 67.72],
+          [-114.85, 67.92],
+          [-115.55, 67.92],
+          [-115.55, 67.72]
+        ]]
+      }
+    }
+  ]
+}
