@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "pangnirtung_fjord_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "pangnirtung_fjord_vicinity",
+        "name": "Pangnirtung — fjord / park access context (not traced routes)",
+        "sources": "Public community location; gateway to Auyuittuq NP. Useful for summer surface proxies near marine–terrestrial travel.",
+        "source_urls": [
+          "https://www.pc.gc.ca/pn-np/nu/auyuittuq",
+          "https://nunatsiaq.com/stories/article/july-brings-big-heat-to-nunavuts-high-arctic/"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-66.05, 66.02],
+          [-65.42, 66.02],
+          [-65.42, 66.28],
+          [-66.05, 66.28],
+          [-66.05, 66.02]
+        ]]
+      }
+    }
+  ]
+}

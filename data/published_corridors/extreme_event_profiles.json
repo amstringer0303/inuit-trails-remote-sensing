@@ -1,0 +1,65 @@
+{
+  "description": "Links publicly reported extreme periods to AOI ids in corridor_metadata.json. Sentinel-2 is only appropriate for sunlit seasons; winter storms need SAR/reanalysis/stations.",
+  "events": [
+    {
+      "id": "kivalliq_blizzard_nov_2023",
+      "title": "Severe Kivalliq storm period (Rankin Inlet winds; Arviat power emergency)",
+      "approximate_dates": "2023-11-21 to 2023-11-26",
+      "sentinel2_recommended": false,
+      "interpretation_note": "Late November: limited daylight and storm cloud; optical change maps are not a meaningful test of blizzard damage. Use ERA5 wind/precip, news, and utility outage timelines; consider Sentinel-1 if you add SAR.",
+      "related_corridor_ids": ["rankin_inlet_coastal_vicinity", "arviat_coastal_vicinity"],
+      "references": [
+        "https://www.cbc.ca/news/canada/north/blizzard-rankin-inlet-kivalliq-region-nunavut-1.7036264",
+        "https://www.cbc.ca/news/canada/north/arviat-state-of-emergency-power-outage-blizzard-1.7040198"
+      ]
+    },
+    {
+      "id": "nunavut_july_2022_territory_heat",
+      "title": "Widespread July 2022 temperature records across Nunavut (High Arctic + many communities)",
+      "approximate_dates": "2022-07-01 to 2022-07-31",
+      "sentinel2_recommended": true,
+      "s2_windows": {
+        "pre_start": "2022-07-01",
+        "pre_end": "2022-07-12",
+        "post_start": "2022-07-18",
+        "post_end": "2022-07-31"
+      },
+      "related_corridor_ids": [
+        "akshayuk_pass_vicinity",
+        "pangnirtung_fjord_vicinity",
+        "iqaluit_snowmobile_vicinity"
+      ],
+      "references": [
+        "https://nunatsiaq.com/stories/article/july-brings-big-heat-to-nunavuts-high-arctic/",
+        "https://nunatsiaq.com/stories/article/nunavuts-eureka-weather-station-experiences-warmest-july-on-record/"
+      ]
+    },
+    {
+      "id": "spring_2023_kitikmeot_warm_melt",
+      "title": "Anomalously warm spring 2023 — snow/ice melt context (reanalysis; compare to case study)",
+      "approximate_dates": "2023-05-01 to 2023-06-30",
+      "sentinel2_recommended": true,
+      "s2_windows": {
+        "pre_start": "2023-05-01",
+        "pre_end": "2023-05-31",
+        "post_start": "2023-06-10",
+        "post_end": "2023-06-30"
+      },
+      "related_corridor_ids": ["cambridge_bay_travel_region", "kugluktuk_coronation_gulf"],
+      "references": [
+        "https://open-meteo.com/en/docs/historical-weather-api"
+      ]
+    },
+    {
+      "id": "jan_2022_record_arctic_cyclone",
+      "title": "Record Arctic cyclone — sea ice pack (not community trail AOI)",
+      "approximate_dates": "2022-01-21 to 2022-01-27",
+      "sentinel2_recommended": false,
+      "interpretation_note": "Science focus on ice-ocean waves and microwave ice; no AOI in this repo targets that event.",
+      "related_corridor_ids": [],
+      "references": [
+        "https://doi.org/10.1029/2022JD037161"
+      ]
+    }
+  ]
+}

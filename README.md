@@ -71,7 +71,11 @@ For each AOI and date pair, the scripts pick **two Sentinel-2** scenes (a “pre
 | `ith_highway_segment_approx.geojson` | Mid-section of the **Inuvik–Tuktoyaktuk Highway** (public road; official GIS on Open Canada / GNWT). |
 | `akshayuk_pass_vicinity.geojson` | **Akshayuk Pass** area, Auyuittuq NP (published coordinates / park maps). |
 | `iqaluit_snowmobile_network_vicinity.geojson` | Wider **Iqaluit** context where the city publishes a [snowmobile trail map](https://www.iqaluit.ca/in/content/snowmobile-trail-map)—polygon is **not** traced from that map. |
-| `aoi_collection.geojson` | All of the above **plus** Kugluktuk/Coronation Gulf in one layer for QGIS. |
+| `cambridge_bay_travel_region.geojson` | **Cambridge Bay** / Victoria Island south coast (Kitikmeot hub). |
+| `rankin_inlet_coastal_vicinity.geojson` / `arviat_coastal_vicinity.geojson` | **Kivalliq** Hudson Bay coast (context for Nov 2023 storm reporting). |
+| `pangnirtung_fjord_vicinity.geojson` | **Pangnirtung** fjord / Auyuittuq access context. |
+| `sanikiluaq_belcher_vicinity.geojson` | **Belcher Islands** / Sanikiluaq sea-ice travel context. |
+| `aoi_collection.geojson` | **Nine** corridor AOIs in one layer for QGIS. |
 | `corridor_metadata.json` | IDs, paths, and **source URLs** for your methods section. |
 | `extreme_event_profiles.json` | Public **extreme periods** (storms, heat, melt) linked to AOI ids; notes when **Sentinel-2 is inappropriate** (e.g. November blizzard). |
 

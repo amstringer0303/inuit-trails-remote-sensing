@@ -1,9 +1,15 @@
 {
   "batch_script": "scripts/run_published_corridor_batch.py",
+  "event_script": "scripts/run_extreme_event_s2.py",
   "outputs_after_batch_run": [
     "outputs/published_corridors/<corridor_id>/delta_ndvi.tif",
     "outputs/published_corridors/<corridor_id>/delta_ndwi.tif",
     "outputs/published_corridors/<corridor_id>/delta_indices.png"
   ],
-  "note": "Raster products are gitignored; regenerate with: python scripts/run_published_corridor_batch.py"
+  "outputs_extreme_events": [
+    "outputs/extreme_events/<event_id>/<corridor_id>/delta_ndvi.tif",
+    "outputs/extreme_events/<event_id>/<corridor_id>/delta_ndwi.tif",
+    "outputs/extreme_events/<event_id>/<corridor_id>/delta_indices.png"
+  ],
+  "note": "Raster products are gitignored; regenerate with the scripts above. See README for what the rasters mean."
 }

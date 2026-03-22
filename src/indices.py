@@ -23,6 +23,19 @@ def ndsi(green: xr.DataArray, swir11: xr.DataArray) -> xr.DataArray:
     return out.assign_attrs(long_name="NDSI", grid_mapping=green.attrs.get("grid_mapping"))
 
 
+def mndwi_xu2006(green: xr.DataArray, swir11: xr.DataArray) -> xr.DataArray:
+    """Modified NDWI (Xu 2006): (Green − SWIR1) / (Green + SWIR1); S2 B03 + B11.
+
+    Stronger separation of open water from built-up and soil than NIR-based NDWI
+    for many landscapes; still not a flood depth measurement.
+    """
+    g = green.astype("float32")
+    s = swir11.astype("float32")
+    den = g + s
+    out = xr.where(den != 0, (g - s) / den, np.nan)
+    return out.assign_attrs(long_name="MNDWI_Xu2006", grid_mapping=green.attrs.get("grid_mapping"))
+
+
 def ndwi_mcfeeters(green: xr.DataArray, nir: xr.DataArray) -> xr.DataArray:
     """NDWI (McFeeters): water / wetness sensitivity using green and NIR."""
     g = green.astype("float32")

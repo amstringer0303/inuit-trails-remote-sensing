@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "arviat_coastal_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "arviat_coastal_vicinity",
+        "name": "Arviat — Hudson Bay west coast community context",
+        "sources": "November 2023 prolonged power outage / state of emergency during Kivalliq storm period (news). AOI is regional context only.",
+        "source_urls": [
+          "https://www.cbc.ca/news/canada/north/arviat-state-of-emergency-power-outage-blizzard-1.7040198",
+          "https://geohack.toolforge.org/geohack.php?pagename=Arviat&params=61_06_N_94_03_W_type:city_scale:20000_region:CA-NU"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-94.25, 60.98],
+          [-93.82, 60.98],
+          [-93.82, 61.22],
+          [-94.25, 61.22],
+          [-94.25, 60.98]
+        ]]
+      }
+    }
+  ]
+}

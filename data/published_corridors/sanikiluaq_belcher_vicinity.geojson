@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "name": "sanikiluaq_belcher_vicinity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "sanikiluaq_belcher_vicinity",
+        "name": "Sanikiluaq / Belcher Islands — sea ice & inter-island travel context",
+        "sources": "Public hamlet coordinates; ELOKA / NSIDC community sea-ice documentation (observations, not this polygon).",
+        "source_urls": [
+          "https://eloka-arctic.org/communities/sanikiluaq/seaice_project.html",
+          "https://nsidc.org/data/eloka002/versions/1",
+          "https://geohack.toolforge.org/geohack.php?pagename=Sanikiluaq&params=56_32_34_N_079_13_30_W_type:city_scale:20000_region:CA-NU"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-79.55, 56.32],
+          [-78.88, 56.32],
+          [-78.88, 56.74],
+          [-79.55, 56.74],
+          [-79.55, 56.32]
+        ]]
+      }
+    }
+  ]
+}
