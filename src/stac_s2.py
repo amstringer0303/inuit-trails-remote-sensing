@@ -104,7 +104,8 @@ SCL_MASK_VALUES = frozenset({1, 3, 8, 9, 10})
 
 def scl_is_clear(scl: xr.DataArray) -> xr.DataArray:
     """True where pixel is not saturated, cloud, shadow, or cirrus (coarse clear mask)."""
-    v = np.asarray(scl.values, dtype=np.int16)
+    raw = np.asarray(scl.values, dtype=np.float64)
+    v = np.where(np.isfinite(raw), raw, -1).astype(np.int32)
     bad = np.isin(v, list(SCL_MASK_VALUES))
     clear = ~bad
     return xr.DataArray(

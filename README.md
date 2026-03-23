@@ -2,6 +2,23 @@
 
 Exploratory code for linking **satellite observations** to **possible indicators** of extreme-weather stress on **subsistence travel corridors** (sea ice, coastal/marine, and inland). This repository is a methods sandbox, not a finished assessment product.
 
+## Case study: Hay River flood (MNDWI + SAR)
+
+**May 2022** ice-jam / river flooding in **Hay River, NWT** (widely reported; citations in the GeoJSON). This workflow uses **both**:
+
+- **Sentinel-2:** **MNDWI (Xu 2006)** from **B03 + B11** — stronger open-water / wetness contrast than NIR-NDWI alone for many surfaces; **SCL** cloud mask.
+- **Sentinel-1 GRD:** **VV** backscatter **difference in dB** between a **pre-flood** and **peak-surge** acquisition on the **same relative orbit** (here 2022-04-30 vs 2022-05-12).
+
+```bash
+python scripts/case_study_hay_river_flood_2022.py --dry-run
+python scripts/case_study_hay_river_flood_2022.py
+```
+
+Outputs (local): `outputs/case_study_hay_river_flood_2022/` — `s1_delta_vv_dB.tif`, `s2_delta_mndwi_masked.tif`, quick-look PNG, `REPORT.md`.  
+Plots use **subsampled** arrays so Matplotlib does not load full 10–40 m rasters into RAM.
+
+Also registered in `data/published_corridors/extreme_event_profiles.json` as `hay_river_flood_may_2022`.
+
 ## Case study (climate + Sentinel-2)
 
 **Kugluktuk area, Coronation Gulf, spring 2023** — coastal tundra where **snow/ice melt timing** affects **overland** and **nearshore** travel conditions.

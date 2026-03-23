@@ -51,6 +51,19 @@
       ]
     },
     {
+      "id": "hay_river_flood_may_2022",
+      "title": "Hay River (NWT) ice-jam / river flood — May 2022",
+      "approximate_dates": "2022-05-10 to 2022-05-15 (public evacuation / surge reporting)",
+      "sentinel2_recommended": true,
+      "sentinel1_recommended": true,
+      "interpretation_note": "Optical MNDWI (Xu 2006) plus Sentinel-1 VV dB change: see scripts/case_study_hay_river_flood_2022.py and data/aoi/hay_river_floodplain_2022.geojson.",
+      "related_corridor_ids": [],
+      "references": [
+        "https://www.cbc.ca/news/canada/north/evacuation-order-issued-for-all-of-hay-river-n-w-t-1.6450378",
+        "https://www.cbc.ca/news/canada/north/hay-river-flood-evacuation-may-12-2022-1.6450325"
+      ]
+    },
+    {
       "id": "jan_2022_record_arctic_cyclone",
       "title": "Record Arctic cyclone — sea ice pack (not community trail AOI)",
       "approximate_dates": "2022-01-21 to 2022-01-27",
