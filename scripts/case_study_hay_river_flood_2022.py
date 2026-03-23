@@ -38,6 +38,16 @@ DEFAULT_AOI = ROOT / "data" / "aoi" / "hay_river_floodplain_2022.geojson"
 OUT = ROOT / "outputs" / "case_study_hay_river_flood_2022"
 
 
+def _plot_array(arr: np.ndarray, max_side: int = 1800) -> np.ndarray:
+    """Stride subsample so matplotlib does not allocate gigabytes on full S1/S2 grids."""
+    a = np.squeeze(np.asarray(arr, dtype=float))
+    if a.ndim != 2:
+        return a
+    h, w = a.shape
+    step = max(1, max(h, w) // max_side)
+    return a[::step, ::step]
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Hay River 2022 flood: MNDWI + S1 VV")
     p.add_argument("--aoi", type=Path, default=DEFAULT_AOI)
@@ -106,7 +116,7 @@ def main() -> None:
     if s2_pre_i is None or s2_post_i is None:
         print("Warning: skipping S2 MNDWI — insufficient clear scenes in windows.")
         fig, ax = plt.subplots(1, 1, figsize=(6, 5))
-        arr = np.asarray(dvv_db.values, dtype=float)
+        arr = _plot_array(dvv_db.values)
         v = np.nanpercentile(np.abs(arr), 98)
         v = max(v, 0.5)
         im = ax.imshow(arr, cmap="RdBu_r", vmin=-v, vmax=v)
@@ -135,16 +145,16 @@ def main() -> None:
     dm_m.rio.to_raster(OUT / "s2_delta_mndwi_masked.tif")
 
     fig, axes = plt.subplots(1, 2, figsize=(11, 5))
-    arr_m = np.asarray(dm_m.values, dtype=float)
-    vm = np.nanpercentile(np.abs(arr_m), 98)
+    arr_m = _plot_array(dm_m.values)
+    vm = float(np.nanpercentile(np.abs(arr_m), 98)) if np.any(np.isfinite(arr_m)) else 0.1
     vm = max(vm, 0.05)
     im0 = axes[0].imshow(arr_m, cmap="RdBu_r", vmin=-vm, vmax=vm)
     axes[0].set_title("Δ MNDWI (Xu 2006)\nSentinel-2, SCL-masked")
     axes[0].axis("off")
     plt.colorbar(im0, ax=axes[0], fraction=0.046, pad=0.04)
 
-    arr_v = np.asarray(dvv_db.values, dtype=float)
-    vv_lim = np.nanpercentile(np.abs(arr_v), 98)
+    arr_v = _plot_array(dvv_db.values)
+    vv_lim = float(np.nanpercentile(np.abs(arr_v), 98)) if np.any(np.isfinite(arr_v)) else 1.0
     vv_lim = max(vv_lim, 0.5)
     im1 = axes[1].imshow(arr_v, cmap="RdBu_r", vmin=-vv_lim, vmax=vv_lim)
     axes[1].set_title("Δ VV (dB)\nSentinel-1 GRD")

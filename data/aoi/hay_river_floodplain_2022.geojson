@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "name": "hay_river_floodplain_may2022",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "Hay River / K'atlodeeche First Nation ice-jam river flood",
+        "when_public_reports": "Evacuation ordered night of 2022-05-10; major surge reported 2022-05-12; re-entry began 2022-05-15.",
+        "sources": [
+          "https://www.cbc.ca/news/canada/north/evacuation-order-issued-for-all-of-hay-river-n-w-t-1.6450378",
+          "https://www.cbc.ca/news/canada/north/hay-river-flood-evacuation-may-12-2022-1.6450325",
+          "https://cabinradio.ca/93013/news/south-slave/live-hay-river-and-kfn-evacuate-thousands-displaced/"
+        ],
+        "methods_note": "MNDWI (S2) + VV backscatter change (S1 GRD) are complementary: optical sees water/sediment where clear; SAR penetrates cloud and is sensitive to surface water / roughness. Neither is calibrated flood depth."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-116.22, 60.76],
+          [-115.58, 60.76],
+          [-115.58, 60.93],
+          [-116.22, 60.93],
+          [-116.22, 60.76]
+        ]]
+      }
+    }
+  ]
+}
