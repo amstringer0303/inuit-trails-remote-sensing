@@ -122,11 +122,6 @@ The last command prints why **S2 is not recommended** for that winter storm.
 2. **Compare** a pre-event and post-event window using simple spectral indices (e.g. NDVI, NDWI, NDSI) as *proxies* for conditions that might affect trails—not as ground truth.
 3. **Buffer** vector trail segments (when you add them) to summarize zonal statistics.
 
-**Important limitations**
-
-- Satellite data cannot “see” cultural travel routes directly; it can only hint at surface conditions (snow/ice/water/vegetation/wetness) that may co-occur with trail usability.
-- Extreme events must be defined with dates and locations you supply (community consultation, weather logs, news, or reanalysis).
-- Respect **Indigenous data sovereignty** and any agreements governing trail spatial data. Do not publish sensitive locations without explicit permission.
 
 ## Quick start
 
